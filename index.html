@@ -1,34 +1,79 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title>SuperMarioBros575 - Home<title>
-  <meta name="description" content="My site for hosting my projects and tests">
-  <meta name="author" content="SuperMarioBros575">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperMarioBros575 - Home</title>
+    <script type="module" src="./index.js"></script>
+    <style>
+      body {
+        overflow:hidden;
+        cursor:pointer
+      }
+      canvas {
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        margin: 0px;
+        max-width:100%
+      }
+      div {
+        position:absolute;
+        width:100%;
+        font-family:"Arial", sans-serif;
+        color: #ffffff;
+        text-align:center;
+        font-size: xx-large;
+      }
+      .title {
+        font-size:xx-large;
+        font-weight:1000;
+      }
+      #textContainer {
+        top:10%
+      }
+      a {
+        color:white;
+        font-family:'Courier New', Courier, monospace;
+      }
+      #projects {
+        visibility: hidden;
+        font-size: medium
+      }
+      .project {
+        font-size: xx-large
+      }
+      .tiny {
+        font-size:x-small
+      }
+    </style>
+    <script>
+      function projects() {
+        document.getElementById("projects").style.visibility = "visible"
+        document.getElementById("tohide").innerHTML = ""
+      }
+      function hideText() {
+        document.getElementById("textContainer").innerHTML = ""
+      }
+    </script>
 </head>
-</head>
-  
-<body> 
-  <li class="nav-item active">
-                <a class="nav-link" href="/index">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/features">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/subscribe">Subscribtion</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/SMB575 Server Link">Join my server for support!</a>
-            </li>
-        </ul>
-<body>
+<body id="container">
+  <div id="textContainer">
+    <img src="placeholdercomthingy" height="200" width="200"/>
+    <div class="title">SuperMarioBros575</div><br/><br/><br/><br/>
+    <div id="projects">
+      <div class="project"><a href="//luphoria.github.io/MCanywhere/bookmarklet.html">sm64js (Coming Soon!)</a></div><br/><br/><br/>
+    </div>
+    <div id="tohide">
+      <div class="project">If you want to contact me on discord, my user is @(place your user here).</div><br/><br/>
+      <div><a href="javascript:projects()">projects</a></div><br/><br/><br/>
+      <div class="tiny"><a href="javascript:hideText()">background only</a></div>
+    </div>
+  </div>
+</body>
+<!--
+-->
 </html>
