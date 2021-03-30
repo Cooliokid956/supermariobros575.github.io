@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Clever | Portal</title>
+<link rel="shortcut icon" href="https://assets.clever.com/launchpad/b9bdad2a8/favicon.ico?1">
+</head>
+<object type="application/x-shockwave-flash" data="https://cdn.jsdelivr.net/gh/Shadowsnhd/gstore@v1/SuperMario63.swf" width=1136 height=650>
+				<param name="movie" value="https://cdn.jsdelivr.net/gh/Shadowsnhd/gstore@v1/SuperMario63.swf" />
+				<param name="FlashVars" value="autoconnectroomid=&autoconnectroompassword=" />
+				<param name="wmode" value="direct" />
+				<param name="allowscriptaccess" value="always" />
+				</object>
+</html>
