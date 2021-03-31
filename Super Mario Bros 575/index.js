@@ -5,10 +5,10 @@ document.onreadystatechange = function (event) {
         return;
     }
 
-    var UserWrapper = new UserWrappr.UserWrappr(Project S.Project S.prototype.proliferate(
+    var UserWrapper = new UserWrappr.UserWrappr(Super Mario Bros.Super Mario Bros.prototype.proliferate(
         {
-            "GameStartrConstructor": Project S.Project S
-        }, Project S.Project S.settings.ui, true));
+            "GameStartrConstructor": Super Mario Bros.Super Mario Bros
+        }, Super Mario Bros.Super Mario Bros.settings.ui, true));
 
     console.log("It took " + (Date.now() - time) + " milliseconds to start."), UserWrapper.displayHelpMenu()
 };
