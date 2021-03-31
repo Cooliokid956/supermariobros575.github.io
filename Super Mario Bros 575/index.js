@@ -5,10 +5,10 @@ document.onreadystatechange = function (event) {
         return;
     }
 
-    var UserWrapper = new UserWrappr.UserWrappr(Super Mario Bros.Super Mario Bros.prototype.proliferate(
+    var UserWrapper = new UserWrappr.UserWrappr(FullScreenMario.FullScreenMario.prototype.proliferate(
         {
-            "GameStartrConstructor": Super Mario Bros.Super Mario Bros
-        }, Super Mario Bros.Super Mario Bros.settings.ui, true));
+            "GameStartrConstructor": FullScreenMario.FullScreenMario
+        }, FullScreenMario.FullScreenMario.settings.ui, true));
 
     console.log("It took " + (Date.now() - time) + " milliseconds to start."), UserWrapper.displayHelpMenu()
 };
