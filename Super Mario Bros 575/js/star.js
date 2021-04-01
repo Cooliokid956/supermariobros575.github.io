@@ -18,7 +18,6 @@
   Star.prototype.render = function(ctx, vX, vY) {
     if (this.spawning > 1) return;
     this.sprite.render(ctx, this.pos[0], this.pos[1], vX, vY);
-    sounds.superstar.play(); 
   }
 
   Star.prototype.spawn = function() {
