@@ -114,7 +114,6 @@
 			if (this.power === 0) {
 				sounds.smallJump.currentTime = 0;
 				sounds.smallJump.play();
-				sounds.superstar.play(); 
 			} else {
 				sounds.bigJump.currentTime = 0;
 				sounds.bigJump.play();
@@ -401,6 +400,7 @@
 	};
 
 	Player.prototype.star = function(idx) {
+		sounds.superstar.play(); 
 		delete level.items[idx];
 		this.starTime = 660;
 	}
