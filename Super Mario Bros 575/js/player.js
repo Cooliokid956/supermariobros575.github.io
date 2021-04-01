@@ -400,7 +400,6 @@
 	};
 
 	Player.prototype.star = function(idx) {
-		sounds.superstar.play();
 		delete level.items[idx];
 		this.starTime = 660;
 		
