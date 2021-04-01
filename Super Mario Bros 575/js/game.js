@@ -140,6 +140,7 @@ function updateEntities(dt, gameTime) {
   if (player.exiting) {
     if (player.pos[0] > vX + 96)
       vX = player.pos[0] - 96
+           player.noCrouch();
   }else if (level.scrolling && player.pos[0] > vX + 80) {
     vX = player.pos[0] - 80;
   }
