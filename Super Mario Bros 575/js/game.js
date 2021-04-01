@@ -54,8 +54,8 @@ function init() {
     overworld: new Audio('sounds/overworld.mp3'),
     underground: new Audio('sounds/underground_bgm.ogg'),
     clear: new Audio('sounds/stage_clear.wav'),
-    superstar: new Audio('sounds/Mario Death.wav'),
-    death: new Audio('sounds/superstar.wav')
+    death: new Audio('sounds/Mario Death.wav'),
+    superstar: new Audio('sounds/superstar.wav')
   };
   sounds = {
     smallJump: new Audio('sounds/jump-small.wav'),
