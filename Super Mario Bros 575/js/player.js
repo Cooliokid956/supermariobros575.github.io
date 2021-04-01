@@ -378,7 +378,7 @@
 		music.overworld.pause();
 		music.underground.pause();
 		music.overworld.currentTime = 0;
-		music.death.play();
+		music.superstar.play();
 		this.noWalk();
 		this.noRun();
 		this.noJump();
@@ -402,12 +402,6 @@
 	Player.prototype.star = function(idx) {
 		delete level.items[idx];
 		this.starTime = 660;
-	}
-	
-	Player.prototype.star = function() {
-		music.overworld.pause();
-		music.underground.pause();
-		music.superstar.play();
 		
 	}
 				
