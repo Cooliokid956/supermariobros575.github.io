@@ -18,6 +18,7 @@
   Star.prototype.render = function(ctx, vX, vY) {
     if (this.spawning > 1) return;
     this.sprite.render(ctx, this.pos[0], this.pos[1], vX, vY);
+    sounds.superstar.play(); 
   }
 
   Star.prototype.spawn = function() {
@@ -104,7 +105,6 @@
     //if the hitboxes actually overlap
     if (!(hpos1[0] > hpos2[0]+player.hitbox[2] || (hpos1[0]+this.hitbox[2] < hpos2[0]))) {
       if (!(hpos1[1] > hpos2[1]+player.hitbox[3] || (hpos1[1]+this.hitbox[3] < hpos2[1]))) {
-        sounds.superstar.play(); 
         player.star(this.idx);
       }
     }
