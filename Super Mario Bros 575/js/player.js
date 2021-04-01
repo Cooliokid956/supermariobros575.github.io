@@ -400,11 +400,17 @@
 	};
 
 	Player.prototype.star = function(idx) {
-		sounds.superstar.play(); 
 		delete level.items[idx];
 		this.starTime = 660;
 	}
-
+	
+	Player.prototype.star = function() {
+		music.overworld.pause();
+		music.underground.pause();
+		music.superstar.play();
+		
+	}
+				
 	Player.prototype.pipe = function(direction, destination) {
 		sounds.pipe.play();
 		this.piping = true;
