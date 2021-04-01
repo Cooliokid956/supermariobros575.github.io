@@ -378,7 +378,7 @@
 		music.overworld.pause();
 		music.underground.pause();
 		music.overworld.currentTime = 0;
-		music.superstar.play();
+		music.death.play();
 		this.noWalk();
 		this.noRun();
 		this.noJump();
