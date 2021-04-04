@@ -129,9 +129,11 @@ var oneone = Mario.oneone = function() {
   level.putWall(38, 10, 1);
   level.putWall(39, 10, 1);
   level.putWall(40, 10, 1);
+  level.putBrick(47, 8, null);
+  level.putBrick(48, 8, null);
 
   //and enemies
-  level.putGoomba(22, 12);
+  level.putGoomba(2, 38);
 
   music.underground.pause();
   // music.overworld.currentTime = 0;
