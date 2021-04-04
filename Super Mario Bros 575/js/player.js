@@ -38,7 +38,7 @@
 	Player.prototype.shoot = function() {
 		if (this.fireballs >= 2) return; //Projectile limit!
 		this.fireballs += 1;
-		var fb = new Mario.Fireball([this.pos[0]+8,this.pos[1]]); //I hate you, Javascript.
+		var fb = new Mario.Fireball([this.pos[0]+8,this.pos[1]]);
 		fb.spawn(this.left);
 		this.shooting = 2;
 	}
