@@ -64,7 +64,7 @@ var oneone = Mario.oneone = function() {
      new Mario.Sprite('sprites/items.png', [128, 32], [16,16], 0)
    ]
  });
-  ground = [[0,69],[71,86],[89,153],[155,212],[216,225],[227,235]];
+  ground = [[0,235]];
   player.pos[0] = level.playerPos[0];
   player.pos[1] = level.playerPos[1];
   vX = 0;
@@ -123,31 +123,15 @@ var oneone = Mario.oneone = function() {
   level.putQBlock(22, 5, new Mario.Bcoin([352, 80]));
   level.putQBlock(23, 9, new Mario.Bcoin([368, 144]));
   level.putBrick(24, 9, null);
-  level.putRealPipe(34, 10, 3, "DOWN", Mario.oneonetunnel);
-  level.putWall(36, 11, 1);
-  level.putWall(37, 11, 1);
-  level.putWall(38, 11, 1);
-  level.putWall(39, 11, 1);
-  level.putWall(40, 11, 1);
+  level.putRealPipe(34, 11, 4, "DOWN", Mario.oneonetunnel);
+  level.putWall(36, 12, 1);
+  level.putWall(37, 12, 1);
+  level.putWall(38, 12, 1);
+  level.putWall(39, 12, 1);
+  level.putWall(40, 12, 1);
 
   //and enemies
   level.putGoomba(22, 12);
-  level.putGoomba(40, 12);
-  level.putGoomba(50, 12);
-  level.putGoomba(51, 12);
-  level.putGoomba(82, 4);
-  level.putGoomba(84, 4);
-  level.putGoomba(100, 12);
-  level.putGoomba(102, 12);
-  level.putGoomba(114, 12);
-  level.putGoomba(115, 12);
-  level.putGoomba(122, 12);
-  level.putGoomba(123, 12);
-  level.putGoomba(125, 12);
-  level.putGoomba(126, 12);
-  level.putGoomba(170, 12);
-  level.putGoomba(172, 12);
-  level.putKoopa(35, 11);
 
   music.underground.pause();
   // music.overworld.currentTime = 0;
