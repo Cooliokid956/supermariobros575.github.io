@@ -64,7 +64,7 @@ var oneone = Mario.oneone = function() {
      new Mario.Sprite('sprites/items.png', [128, 32], [16,16], 0)
    ]
  });
-  ground = [[0,69],[71,86],[89,153],[155,212]];
+  ground = [[0,69],[71,86],[89,153],[155,212],[216,225],[227,235]];
   player.pos[0] = level.playerPos[0];
   player.pos[1] = level.playerPos[1];
   vX = 0;
@@ -184,10 +184,6 @@ var oneone = Mario.oneone = function() {
   level.putBrick(171, 9, null);
   level.putPipe(179, 13, 2);
   level.putBrick(140, 0, 1);
-  level.putFloor(256, 11, 2);
-  level.putFloor(257, 12, 3);
-  level.putFloor(258, 13, 4);
-  level.putFloor(259, 14, 4);
 
   //and enemies
   level.putGoomba(22, 12);
