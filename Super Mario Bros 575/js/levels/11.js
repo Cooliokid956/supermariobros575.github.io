@@ -183,16 +183,7 @@ var oneone = Mario.oneone = function() {
   level.putQBlock(170, 9, new Mario.Bcoin([2720, 144]));
   level.putBrick(171, 9, null);
   level.putPipe(179, 13, 2);
-  level.putWall(181, 13, 1);
-  level.putWall(182, 13, 2);
-  level.putWall(183, 13, 3);
-  level.putWall(184, 13, 4);
-  level.putWall(185, 13, 5);
-  level.putWall(186, 13, 6);
-  level.putWall(187, 13, 7);
-  level.putWall(188, 13, 8);
-  level.putWall(189, 13, 8);
-  level.putFlagpole(198);
+  level.putBrick(190, 5, null);
 
   //and enemies
   level.putGoomba(22, 12);
