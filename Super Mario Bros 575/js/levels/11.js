@@ -118,7 +118,7 @@ var oneone = Mario.oneone = function() {
   level.putWall(38, 10, 1);
   level.putWall(39, 10, 1);
   level.putWall(40, 10, 1);
-  level.putRealPipe(41, 9, 4, "DOWN", Mario.oneonetunnel);
+  level.putRealPipe(41, 9, 4, "DOWN", Mario.oneonesky);
 
   //and enemies
   level.putGoomba(2, 38);
