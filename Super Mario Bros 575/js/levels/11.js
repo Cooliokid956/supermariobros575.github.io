@@ -25,7 +25,6 @@ var oneone = Mario.oneone = function() {
     pipeREndSprite: new Mario.Sprite('sprites/tiles.png', [16, 128], [16,16], 0),
     pipeLMidSprite: new Mario.Sprite('sprites/tiles.png', [0, 144], [16,16], 0),
     pipeRMidSprite: new Mario.Sprite('sprites/tiles.png', [16, 144], [16,16], 0),
-
     pipeUpMid: new Mario.Sprite('sprites/tiles.png', [0, 144], [32,16], 0),
     pipeSideMid: new Mario.Sprite('sprites/tiles.png', [48, 128], [16,32], 0),
     pipeLeft: new Mario.Sprite('sprites/tiles.png', [32, 128], [16,32], 0),
@@ -68,53 +67,43 @@ var oneone = Mario.oneone = function() {
   player.pos[0] = level.playerPos[0];
   player.pos[1] = level.playerPos[1];
   vX = 0;
-
   //build THE GROUND
   ground.forEach(function(loc) {
     level.putFloor(loc[0],loc[1]);
   });
-
   //build scenery
   clouds = [[7,3],[19, 2],[56, 3],[67, 2],[87, 2],[103, 2],[152, 3],[163, 2],[200, 3]];
   clouds.forEach(function(cloud){
     level.putCloud(cloud[0],cloud[1]);
   });
-
   twoClouds = [[36,2],[132,2],[180,2]];
   twoClouds.forEach(function(cloud){
     level.putTwoCloud(cloud[0],cloud[1]);
   });
-
   threeClouds = [[27,3],[75,3],[123,3],[171,3]];
   threeClouds.forEach(function(cloud){
     level.putThreeCloud(cloud[0],cloud[1]);
   });
-
   bHills = [0,48,96,144,192]
   bHills.forEach(function(hill) {
     level.putBigHill(hill, 12);
   });
-
   sHills = [16,64,111,160];
   sHills.forEach(function(hill) {
     level.putSmallHill(hill, 12);
   });
-
   bushes = [23,71,118,167];
   bushes.forEach(function(bush) {
     level.putBush(bush, 12);
   });
-
   twoBushes = [41,89,137];
   twoBushes.forEach(function(bush) {
     level.putTwoBush(bush, 12);
   });
-
   threeBushes = [11,59,106];
   threeBushes.forEach(function(bush) {
     level.putThreeBush(bush, 12);
   });
-
   //interactable terrain
   level.putQBlock(16, 9, new Mario.Bcoin([256, 144]));
   level.putBrick(20, 9, null);
@@ -123,13 +112,16 @@ var oneone = Mario.oneone = function() {
   level.putQBlock(22, 5, new Mario.Bcoin([352, 80]));
   level.putQBlock(23, 9, new Mario.Bcoin([368, 144]));
   level.putBrick(24, 9, null);
-  level.putwall(36, 9, 1);
-  level.putwall(37, 9, 1);
-  level.putwall(38, 9, 1);
-  
-  //and enemies
-  level.putGoomba(10, 38);
+  level.putRealPipe(34, 9, 4, "DOWN", Mario.oneonetunnel);
+  level.putWall(36, 10, 1);
+  level.putWall(37, 10, 1);
+  level.putWall(38, 10, 1);
+  level.putWall(39, 10, 1);
+  level.putWall(40, 10, 1);
+  level.putRealPipe(41, 9, 4, "DOWN", Mario.oneonetunnel);
 
+  //and enemies
+  level.putGoomba(2, 38);
   music.underground.pause();
   // music.overworld.currentTime = 0;
   music.overworld.play();
