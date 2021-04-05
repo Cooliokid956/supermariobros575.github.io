@@ -129,8 +129,8 @@ var oneone = Mario.oneone = function() {
   level.putWall(38, 10, 1);
   level.putWall(39, 10, 1);
   level.putWall(40, 10, 1);
-  level.putBrick(47, 8, null);
-  level.putBrick(48, 8, null);
+  level.putfloor(47, 8, 1);
+  level.putfloor(48, 8, 1);
 
   //and enemies
   level.putGoomba(10, 38);
