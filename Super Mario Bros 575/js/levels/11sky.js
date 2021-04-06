@@ -3,63 +3,83 @@ var oneonetunnel = Mario.oneonesky = function() {
     playerPos: [20,16],
     loader: Mario.oneonesky,
     background: "#000000",
-    scrolling: false,
-    coinSprite: function() {
-      return new Mario.Sprite('sprites/items.png', [0,96],[16,16], 6,[0,0,0,0,1,2,1]);
-    },
-    floorSprite:  new Mario.Sprite('sprites/tiles.png', [0,32],[16,16],0),
-    wallSprite: new Mario.Sprite('sprites/tiles.png', [32, 32],[16,16],0),
+    scrolling: true,
+    invincibility: [144, 192, 240],
+    exit: 204,
+    floorSprite:  new Mario.Sprite('sprites/tiles.png', [0,0],[16,16],0),
+    cloudSprite:  new Mario.Sprite('sprites/tiles.png', [0,320],[48,32],0),
+    wallSprite: new Mario.Sprite('sprites/tiles.png', [0, 16],[16,16],0),
     brickSprite: new Mario.Sprite('sprites/tiles.png', [16, 0], [16,16], 0),
     brickBounceSprite: new Mario.Sprite('sprites/tiles.png',[32,0],[16,16],0),
+    rubbleSprite: function () {
+      return new Mario.Sprite('sprites/items.png', [64,0], [8,8], 3, [0,1])
+    },
     ublockSprite: new Mario.Sprite('sprites/tiles.png', [48, 0], [16,16],0),
-    pipeLMidSprite: new Mario.Sprite('sprites/tiles.png', [0, 144], [16,16], 0),
-    pipeRMidSprite: new Mario.Sprite('sprites/tiles.png', [16, 144], [16,16], 0),
+    superShroomSprite: new Mario.Sprite('sprites/items.png', [0,0], [16,16], 0),
+    fireFlowerSprite: new Mario.Sprite('sprites/items.png', [0,32], [16,16], 20, [0,1,2,3]),
+    starSprite: new Mario.Sprite('sprites/items.png', [0,48], [16,16], 20, [0,1,2,3]),
     pipeLEndSprite: new Mario.Sprite('sprites/tiles.png', [0, 128], [16,16], 0),
     pipeREndSprite: new Mario.Sprite('sprites/tiles.png', [16, 128], [16,16], 0),
+    pipeLMidSprite: new Mario.Sprite('sprites/tiles.png', [0, 144], [16,16], 0),
+    pipeRMidSprite: new Mario.Sprite('sprites/tiles.png', [16, 144], [16,16], 0),
     pipeUpMid: new Mario.Sprite('sprites/tiles.png', [0, 144], [32,16], 0),
     pipeSideMid: new Mario.Sprite('sprites/tiles.png', [48, 128], [16,32], 0),
     pipeLeft: new Mario.Sprite('sprites/tiles.png', [32, 128], [16,32], 0),
     pipeTop: new Mario.Sprite('sprites/tiles.png', [0, 128], [32,16], 0),
-
-    LPipeSprites:[
-      new Mario.Sprite('sprites/tiles.png', [32,128],[16,16],0),
-      new Mario.Sprite('sprites/tiles.png', [32,144],[16,16],0),
-      new Mario.Sprite('sprites/tiles.png', [48,128],[16,16],0),
-      new Mario.Sprite('sprites/tiles.png', [48,144],[16,16],0),
-      new Mario.Sprite('sprites/tiles.png', [64,128],[16,16],0),
-      new Mario.Sprite('sprites/tiles.png', [64,144],[16,16],0),
-    ]
-
-  });
-
+    qblockSprite: new Mario.Sprite('sprites/tiles.png', [384, 0], [16,16], 8, [0,0,0,0,1,2,1]),
+    bcoinSprite: function() {
+      return new Mario.Sprite('sprites/items.png', [0,112],[16,16], 20,[0,1,2,3]);
+    ],
+    bushSprite: new Mario.Sprite('sprites/tiles.png', [176, 144], [48, 16], 0),
+    bushSprites: [
+     new Mario.Sprite('sprites/tiles.png', [176,144], [16,16],0),
+     new Mario.Sprite('sprites/tiles.png', [192,144], [16,16],0),
+     new Mario.Sprite('sprites/tiles.png', [208,144], [16,16],0)],
+   goombaSprite: function() {
+     return new Mario.Sprite('sprites/enemy.png', [0, 16], [16,16], 3, [0,1]);
+   },
+   koopaSprite: function() {
+     return new Mario.Sprite('sprites/enemy.png', [96,0], [16,32], 2, [0,1]);
+   },
+   flagPoleSprites: [
+     new Mario.Sprite('sprites/tiles.png', [256, 128], [16,16], 0),
+     new Mario.Sprite('sprites/tiles.png', [256, 144], [16,16], 0),
+     new Mario.Sprite('sprites/items.png', [128, 32], [16,16], 0)
+   ]  
+ });
+  ground = [[0,50]];
   player.pos[0] = level.playerPos[0];
   player.pos[1] = level.playerPos[1];
   vX = 0;
-  level.putFloor(0,16);
-  level.putWall(0,13,11);
-  walls = [4,5,6,7,8,9,10];
-  walls.forEach(function(loc){
-    level.putWall(loc,13,3);
-    level.putWall(loc,3,1);
+  //build THE GROUND
+  ground.forEach(function(loc) {
+    level.putFloor(loc[0],loc[1]);
   });
-
-  coins = [[5,5], [6,5], [7,5], [8,5], [9,5],
-           [4,7], [5,7], [6,7], [7,7], [8,7], [9,7], [10,7],
-           [4,9], [5,8], [6,8], [7,8], [8,8], [9,9], [10,9]];
-  coins.forEach(function(pos){
-    level.putCoin(pos[0],pos[1]);
+  //build scenery
+  clouds = [[7,3],[19, 2],[56, 3],[67, 2],[87, 2],[103, 2],[152, 3],[163, 2],[200, 3]];
+  clouds.forEach(function(cloud){
+    level.putCloud(cloud[0],cloud[1]);
   });
-
-  //level.putLeftPipe(13,11);
-  level.putRealPipe(13,11,3,"RIGHT", function() {
-    Mario.oneone.call();
-    player.pos = [34, 5]
-    player.pipe("UP", function() {;});
+  twoClouds = [[36,2],[132,2],[180,2]];
+  twoClouds.forEach(function(cloud){
+    level.putTwoCloud(cloud[0],cloud[1]);
   });
+  threeClouds = [[27,3],[75,3],[123,3],[171,3]];
+  threeClouds.forEach(function(cloud){
+    level.putThreeCloud(cloud[0],cloud[1]);
+  });
+  //interactable terrain
+  level.putQBlock(16, 9, new Mario.Bcoin([256, 144]));
+  level.putBrick(20, 9, null);
+  level.putQBlock(21, 9, new Mario.Mushroom([336, 144]));
+  level.putBrick(22, 9, null);
+  level.putQBlock(22, 5, new Mario.Bcoin([352, 80]));
+  level.putQBlock(23, 9, new Mario.Bcoin([368, 144]));
+  level.putBrick(24, 9, null);
 
-  level.putPipe(15,13,13);
-
-  music.overworld.pause();
-  music.underground.currentTime = 0;
-  music.underground.play();
+  //and enemies
+  level.putGoomba(2, 38);
+  music.underground.pause();
+  // music.overworld.currentTime = 0;
+  music.overworld.play();
 };
