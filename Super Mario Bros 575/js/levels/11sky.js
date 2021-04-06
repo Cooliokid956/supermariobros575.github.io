@@ -61,15 +61,26 @@ var oneonetunnel = Mario.oneonesky = function() {
      new Mario.Sprite('sprites/items.png', [128, 32], [16,16], 0)
    ]
  });
+  ground = [[0,50]];
   player.pos[0] = level.playerPos[0];
   player.pos[1] = level.playerPos[1];
   vX = 0;
-  level.putFloor(0,16);
-  level.putWall(0,13,11);
-  walls = [4,5,6,7,8,9,10];
-  walls.forEach(function(loc){
-    level.putWall(loc,13,3);
-    level.putWall(loc,3,1);
+  //build THE GROUND
+  ground.forEach(function(loc) {
+    level.putFloor(loc[0],loc[1]);
+  });
+  //build scenery
+  clouds = [[7,3],[19, 2],[56, 3],[67, 2],[87, 2],[103, 2],[152, 3],[163, 2],[200, 3]];
+  clouds.forEach(function(cloud){
+    level.putCloud(cloud[0],cloud[1]);
+  });
+  twoClouds = [[36,2],[132,2],[180,2]];
+  twoClouds.forEach(function(cloud){
+    level.putTwoCloud(cloud[0],cloud[1]);
+  });
+  threeClouds = [[27,3],[75,3],[123,3],[171,3]];
+  threeClouds.forEach(function(cloud){
+    level.putThreeCloud(cloud[0],cloud[1]);
   });
   coins = [[5,5], [6,5], [7,5], [8,5], [9,5],
            [4,7], [5,7], [6,7], [7,7], [8,7], [9,7], [10,7],
@@ -83,8 +94,26 @@ var oneonetunnel = Mario.oneonesky = function() {
     player.pos = [34, 5]
     player.pipe("UP", function() {;});
   });
+  //interactable terrain
+  level.putQBlock(16, 9, new Mario.Bcoin([256, 144]));
+  level.putBrick(20, 9, null);
+  level.putQBlock(21, 9, new Mario.Mushroom([336, 144]));
+  level.putBrick(22, 9, null);
+  level.putQBlock(22, 5, new Mario.Bcoin([352, 80]));
+  level.putQBlock(23, 9, new Mario.Bcoin([368, 144]));
+  level.putBrick(24, 9, null);
+  level.putRealPipe(34, 9, 4, "DOWN", Mario.oneonetunnel);
+  level.putWall(36, 10, 1);
+  level.putWall(37, 10, 1);
+  level.putWall(38, 10, 1);
+  level.putWall(39, 10, 1);
+  level.putWall(40, 10, 1);
+  level.putRealPipe(41, 9, 4, "DOWN", Mario.oneonesky);
+
+  //and enemies
+  level.putGoomba(2, 38);
   level.putPipe(15,13,13);
-  music.overworld.pause();
-  music.underground.currentTime = 0;
-  music.underground.play();
+  music.underground.pause();
+  // music.overworld.currentTime = 0;
+  music.overworld.play();
 };
