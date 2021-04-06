@@ -82,18 +82,6 @@ var oneonetunnel = Mario.oneonesky = function() {
   threeClouds.forEach(function(cloud){
     level.putThreeCloud(cloud[0],cloud[1]);
   });
-  coins = [[5,5], [6,5], [7,5], [8,5], [9,5],
-           [4,7], [5,7], [6,7], [7,7], [8,7], [9,7], [10,7],
-           [4,9], [5,8], [6,8], [7,8], [8,8], [9,9], [10,9]];
-  coins.forEach(function(pos){
-    level.putCoin(pos[0],pos[1]);
-  });
-  //level.putLeftPipe(13,11);
-  level.putRealPipe(13,11,3,"RIGHT", function() {
-    Mario.oneone.call();
-    player.pos = [34, 5]
-    player.pipe("UP", function() {;});
-  });
   //interactable terrain
   level.putQBlock(16, 9, new Mario.Bcoin([256, 144]));
   level.putBrick(20, 9, null);
