@@ -100,7 +100,6 @@ var oneonetunnel = Mario.oneonesky = function() {
 
   //and enemies
   level.putGoomba(2, 38);
-  level.putPipe(15,13,13);
   music.underground.pause();
   // music.overworld.currentTime = 0;
   music.overworld.play();
